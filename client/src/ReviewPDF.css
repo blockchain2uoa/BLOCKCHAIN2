@@ -1,0 +1,37 @@
+.review-wrapper{
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.review-box{
+    height: 70vmin;
+    width: 70vmin;
+    background-color: #EBEBEB;
+    color: #020201;
+    margin: auto;
+    padding: 10px;
+    position: relative;
+    border: 1px solid black;
+    border-radius:10px;
+    margin-bottom: 15px;;
+}
+
+@media (max-width: 1300px) {
+    .review-box{
+        height: 90vmin;
+        width: 90vmin;
+    }
+}
+
+@media (max-width:599px) {
+    .review-box{
+        height: 120vmin;
+        width: 90vmin;
+    }
+}
+  

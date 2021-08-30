@@ -1,9 +1,15 @@
 import './App.css';
+import Toolbar from './Toolbar';
+import Upload from './Upload';
+import ReviewPDF from './ReviewPDF';
 
 function App() {
   return (
     <div className="App">
-      <p1> Dashboard </p1>
+      <Toolbar/>
+      <Upload/>
+      <ReviewPDF/>
+    
     </div>
   );
 }

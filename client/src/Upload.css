@@ -1,0 +1,25 @@
+.upload{    
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin: 20px;
+    align-items: center;
+}
+
+.upload-title{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 3vmin;
+    line-height: 2rem;
+    margin-right: 20px;
+    color: #020201;
+}
+
+@media (max-width: 800px) {
+    .upload-title{
+        font-size: 6vmin;
+        line-height: 1.5rem;
+    }
+}
+  

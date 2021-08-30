@@ -1,0 +1,11 @@
+.btn{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    color: #F2FCE8;
+    background: #4415FE;
+    border-radius: 7px;
+    cursor:pointer;
+}
