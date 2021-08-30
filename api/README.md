@@ -1,4 +1,4 @@
-Get started:
+Get started :
 
 cd api
 
