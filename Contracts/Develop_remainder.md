@@ -1,0 +1,2 @@
+To achieve the basic functionality of saving and retrieving the data (.pdf file) from the blockchain, we need to know the parameters associated with the data first. As we know, each block has its hash value, it is essential feature to identify the object data. Also, we may include the file’s name and the time when the users upload or download the file.   
+At this stage, we only need to meet the minimum requirements, that is, distinguish, store and retrieve files according to hash value.
