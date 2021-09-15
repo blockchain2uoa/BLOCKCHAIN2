@@ -1,4 +1,4 @@
-pragma solidity >=0.7.0 <0.9.0;
+pragma solidity ^0.4.2;
 
 //This contract is for saving and retrieving file
 contract Store {
@@ -7,11 +7,12 @@ contract Store {
     uint idx = 0;
     //save the file
     function save(string hash) public {
-        files[idx++] = hash;
+        files[idx] = hash;
+        idx++;
     }
 
     //get the file
-    function get(uint id) public view returns (string){
-        return files[id];
+    function get(uint i) constant public  returns (string){
+        return files[i];
     }
 }
