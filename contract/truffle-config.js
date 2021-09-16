@@ -1,6 +1,6 @@
 var HDWalletProvider = require("truffle-hdwallet-provider");
 const MNEMONIC = 'oppose civil crucial guess simple venture garden round retire innocent later tumble';
-const INFURA = 'https://rinkeby.infura.io/v3/d3a8c27b8847423fb141bfdca9ba2ac1'
+const INFURA = 'https://ropsten.infura.io/v3/d3a8c27b8847423fb141bfdca9ba2ac1'
 
 module.exports = {
   networks: {
@@ -9,12 +9,12 @@ module.exports = {
       port: 7545,
       network_id: "*"
     },
-    rinkeby: {
+    ropsten: {
       provider: function() {
         return new HDWalletProvider(MNEMONIC, INFURA)
       },
       network_id: 3,
-      gas:0  
+      gas:4000000  
     }
   }
 };

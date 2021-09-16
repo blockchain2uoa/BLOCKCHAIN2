@@ -9,7 +9,7 @@ router.get("/", function(req, res, next) {
     res.send(databaseConnection);
 });
 // Connecting to MongoDB
-mongoose.connect('mongodb://localhost:27017/myapp');
+mongoose.connect('mongodb+srv://dbUser:Tonyisagoodguy1@cluster0.c9zl7.mongodb.net/test');
 
 // If there is a connection error send an error message
 mongoose.connection.on("error", error => {
