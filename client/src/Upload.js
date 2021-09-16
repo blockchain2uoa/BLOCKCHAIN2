@@ -1,12 +1,21 @@
 import React from 'react'
 import './Upload.css'
-import Button from './Button'
+
 
 function Upload() {
     return (
         <div className="upload">
             <h3 className="upload-title">Upload file here: </h3> 
-            <Button title= "Upload file" />
+            <div className="btn-wrapper">
+            
+                <form className = "uploadFile" action="/upload" method="POST" enctype="multipart/form-data">
+                    <input className = "inputPDF" type="file" name="file" multiple/> 
+                    <button 
+                    className="btn"//onClick={}
+                    > Upload File  </button>
+                </form>
+            
+            </div>
         </div>
     )
 }
