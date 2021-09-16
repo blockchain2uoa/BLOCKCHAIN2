@@ -1,17 +1,18 @@
 version: "2"
 services:
     client:
-        image: webapp-client
+        image: client-side
         restart: always
         ports:
             - "3000:3000"
+        working_dir: /client/src/app
         volumes:
-            - ./client:/client
-            - /client/node_modules
+            - ./client:/client/src/app
+        command: ["npm", "start"]
         links:
             - api
         networks:
-            webappnetwork
+            - webappnetwork
     api:
         image: webapp-api
         restart: always
@@ -23,7 +24,7 @@ services:
         depends_on:
             - mongodb
         networks:
-            webappnetwork   
+            - webappnetwork
     mongodb:
         image: mongo
         restart: always
