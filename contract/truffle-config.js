@@ -1,5 +1,5 @@
 var HDWalletProvider = require("truffle-hdwallet-provider");
-const MNEMONIC = 'oppose civil crucial guess simple venture garden round retire innocent later tumble';
+const MNEMONIC = '';
 const INFURA = 'https://ropsten.infura.io/v3/d3a8c27b8847423fb141bfdca9ba2ac1'
 
 module.exports = {
