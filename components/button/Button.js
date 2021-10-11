@@ -2,16 +2,17 @@ import * as React from 'react';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 
-export default function ContainedButtons({text, click}) {
+export default function ContainedButtons({text}) {
 
-   function uploadDoc(){
+  //  function uploadDoc(){
        
-   }
+  //  }
+  //  onClick = {() => uploadDoc() }
 
   return (
 
     <Stack direction="row" spacing={2}>
-      <Button variant="contained" onClick = {() => uploadDoc() }>{text}</Button>
+      <Button variant="contained" >{text}</Button>
     </Stack>
   );
 }
