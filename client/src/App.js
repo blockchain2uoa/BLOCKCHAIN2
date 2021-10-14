@@ -1,8 +1,10 @@
-import './App.css';
-import Toolbar from './Toolbar';
-import Upload from './Upload';
-import ReviewPDF from './ReviewPDF';
+import Toolbar from './components/toolbar/Toolbar';
+import About from './components/about/About';
+import Verify from './components/verify/VerifyPDF'
+import Upload from './components/upload/Upload'
+
 import { Component } from 'react';
+import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 class App extends Component {
 
@@ -13,9 +15,8 @@ class App extends Component {
       dbResponse: ""
 
     }
-
   };
-
+  
   callAPI() {
       fetch("http://localhost:9000/testAPI")
           .then(res => res.text())
@@ -35,13 +36,16 @@ class App extends Component {
   };
   render(){
     return (
-      <div className="App">
-        <p className="App-intro">{this.state.apiResponse}</p>
-        <p className="App-intro">{this.state.dbResponse}</p>
-        <Toolbar/>
-        <Upload/>
-        <ReviewPDF/>
-      </div>
+      <Router>
+        <div className="App">
+          <Toolbar/>
+          <Switch>
+            <Route path="/" exact component={Upload}/>
+            <Route path="/verify" exact component={Verify}/>
+            <Route path="/about" exact component={About}/>
+          </Switch>
+        </div>
+      </Router>
     );
   }
 

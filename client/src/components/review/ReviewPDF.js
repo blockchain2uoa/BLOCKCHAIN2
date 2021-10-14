@@ -1,7 +1,6 @@
 import React from 'react'
 import { useState } from "react";
 import './ReviewPDF.css';
-import VerifyPDF from './VerifyPDF'
 
 function ReviewPDF() {
     const [check, setCheck] = useState(true);
@@ -10,7 +9,6 @@ function ReviewPDF() {
         if (check ){ return (
                 <div className="review-box">
                     <p>Review the document below </p>
-                    <VerifyPDF/>
                 </div> 
                 
                 )
@@ -20,7 +18,6 @@ function ReviewPDF() {
             )
         }
     } 
-
     return (
         <div className="review-wrapper">
             <PDFfile/>

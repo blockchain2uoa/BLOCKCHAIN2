@@ -1,0 +1,81 @@
+
+.container{
+    width: 100%;    
+}   
+
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+  
+.pdf-container{
+    min-width: 100vw;
+    min-height: 100vh;
+    background-color: #e4e4e4;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.error-msg{
+    width: 100%;
+    color: red;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+button{
+  box-sizing: border-box;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid black;
+  border-radius: 0.6em;
+  color: black;
+  cursor: pointer;
+  align-self: center;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 0;
+  padding: 1.2em 1em;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  margin:
+}
+
+form{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+input{
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.inner-container{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    min-width: 100vw;
+    margin-left: 20px;
+
+}
+
+button.btn-status{
+    margin-left: 10px;
+}
+
+.popup-div{
+    display: flex;
+    flex-direction: col;
+}
+
+
+
+
+  

@@ -1,0 +1,22 @@
+.container-about{
+    position: center;
+    appearance: none;
+    background-color: transparent;
+    border-bottom: 2px solid black;
+    padding: 1.2em 5em;
+    width:fit-content;
+    height:fit-content;
+    left: 0;
+    width: 100%;
+
+}
+
+p{
+   
+    color: navy;
+    font-family: 'Montserrat', sans-serif;
+
+}
+h1{
+    margin-bottom: 30px;
+}
