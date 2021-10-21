@@ -72,9 +72,8 @@ button.btn-status{
 
 .popup-div{
     display: flex;
-    flex-direction: col;
+    flex-direction: column;
 }
-
 
 
 

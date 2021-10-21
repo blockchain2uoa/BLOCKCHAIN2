@@ -9,7 +9,8 @@ import axios from 'axios'
 import PopUp from '../popup/Popup'
 
 const ENDPOINT = "http://localhost:9000/testAPI";
-var hashOfDoc = ''; 
+var hashOfDoc = '';
+var currentTime = '';
 
 
 export const Upload = () => {
@@ -68,6 +69,7 @@ export const Upload = () => {
   const handleHash=()=>{
     var hash = objectHash.sha1(pdfFile);
 	hashOfDoc = hash;
+	currentTime = Date().toLocaleString();
 	setPopup(true);
 	console.log(hash)
 	axios
@@ -92,7 +94,7 @@ export const Upload = () => {
 						<br/>
 						<b> Deployed contract address: </b>
 						<br/>
-						<b> Deployed date: </b>
+						<b> Deployed date: {currentTime} </b>
 					</div>
 		
 				</>}
