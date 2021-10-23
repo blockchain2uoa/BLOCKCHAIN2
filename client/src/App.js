@@ -18,7 +18,7 @@ class App extends Component {
   };
   
   callAPI() {
-      fetch("http://localhost:9000/testAPI")
+      fetch("https://blockchain2.herokuapp.com/testAPI")
           .then(res => res.text())
           .then(res => this.setState({ apiResponse: res }));
   };
