@@ -1,0 +1,39 @@
+.toolbar{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+}
+.title{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 4vmin;
+    line-height: 2rem;
+    color: #020201;
+}
+
+@media (max-width: 800px) {
+    .title{
+        font-size: 7vmin;
+        line-height: 2rem;
+    }
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 10vh;
+    background: rgba(73, 79, 82);
+    color: white;
+}
+
+.nav-links{
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+}
