@@ -16,9 +16,8 @@ var testDBRouter = require("./routes/testDB");//Mongodb
 var app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
-
 
 // // Configure the bodyParser middleware
 // app.use(bodyParser.json());

@@ -10,7 +10,11 @@ function Toolbar() {
     }
     return (
         <nav> 
-            <h3> Blockchain 2</h3>
+
+            <Link style = {styleToolbar} to="/"> 
+                <h3> Blockchain 2</h3>
+            </Link>
+
             <ul className="nav-links"> 
 
                 <Link style = {styleToolbar} to="/"> 
