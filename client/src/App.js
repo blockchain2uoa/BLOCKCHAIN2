@@ -6,6 +6,9 @@ import Upload from './components/upload/Upload'
 import { Component } from 'react';
 import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
+const HEROKUENDPOINT = "https://blockchain2.herokuapp.com";
+const LOCALENDPOINT = "http://localhost:9000/";
+
 class App extends Component {
 
   constructor(props) {
@@ -18,13 +21,13 @@ class App extends Component {
   };
   
   callAPI() {
-      fetch("http://localhost:9000/testAPI")
+      fetch(LOCALENDPOINT + "/testAPI")
           .then(res => res.text())
           .then(res => this.setState({ apiResponse: res }));
   };
 
   callDB() {
-    fetch("http://localhost:9000/testDB")
+    fetch(LOCALENDPOINT + "/testDB")
         .then(res => res.text())
         .then(res => this.setState({ dbResponse: res }))
         .catch(err => err);
