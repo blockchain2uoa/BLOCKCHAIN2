@@ -15,8 +15,6 @@ var currentTime = '';
 
 export const Upload = () => {
 
-  var objectHash = require('object-hash');
-
   const defaultLayoutPluginInstance = defaultLayoutPlugin();
   
 
@@ -65,18 +63,18 @@ export const Upload = () => {
       setViewPdf(null);
     }
   }
-
+  
   const handleHash=()=>{
-    var hash = objectHash.sha1(pdfFile);
-	hashOfDoc = hash;
 	currentTime = Date().toLocaleString();
-	setPopup(true);
-	console.log(hash)
 	axios
-       .post(ENDPOINT, {
-           pdfHash: hash,
+       .post(ENDPOINT+"/upload", {
+			pdfFile: pdfFile
        })
-    	.then(response => console.log(response))
+    	.then(response => {
+			hashOfDoc = response.data.hash;
+			setPopup(true);
+			console.log("PDF Hash from API:" + response.data.hash);
+		})
         .catch(error => console.log(error))
   }
 
@@ -107,7 +105,7 @@ export const Upload = () => {
 			<div className= "inner-container"> 
 				<form className='form-group' onSubmit={handlePdfFileSubmit}>
 					
-					<input type="file" classNam e='form-control'
+					<input type="file" className='form-control'
 					required onChange={handlePdfFileChange}
 					/>
 					{pdfFileError&&<div className='error-msg'>{pdfFileError}</div>}
