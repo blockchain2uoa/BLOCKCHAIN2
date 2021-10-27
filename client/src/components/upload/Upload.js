@@ -9,8 +9,8 @@ import axios from 'axios'
 import PopUp from '../popup/Popup'
 
 const ENDPOINT = "http://localhost:9000/testAPI";
-var hashOfDoc = '';
-var currentTime = '';
+var hashOfDoc = 'undefined';
+var uploadTime = 'undefined';
 
 
 export const Upload = () => {
@@ -65,17 +65,20 @@ export const Upload = () => {
   }
   
   const handleHash=()=>{
-	currentTime = Date().toLocaleString();
 	axios
        .post(ENDPOINT+"/upload", {
 			pdfFile: pdfFile
        })
     	.then(response => {
 			hashOfDoc = response.data.hash;
+			uploadTime = response.data.uploadTime
 			setPopup(true);
+			console.log(response);
 			console.log("PDF Hash from API:" + response.data.hash);
 		})
-        .catch(error => console.log(error))
+        .catch(error => {
+			alert(error.response.data.errorMessage);
+		})
   }
 
   return (
@@ -92,7 +95,7 @@ export const Upload = () => {
 						<br/>
 						<b> Deployed contract address: </b>
 						<br/>
-						<b> Deployed date: {currentTime} </b>
+						<b> Deployed time: {uploadTime} </b>
 					</div>
 		
 				</>}
