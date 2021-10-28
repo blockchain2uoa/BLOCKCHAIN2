@@ -22,22 +22,22 @@ class App extends Component {
   };
   
   callAPI() {
-      fetch(ENDPOINT + "/testAPI")
+      fetch(ENDPOINT + "/API")
           .then(res => {res.text(); console.log(res);})
           .then(res => this.setState({ apiResponse: res }));
   };
 
-  callDB() {
-    fetch(ENDPOINT + "/testDB")
-        .then(res => {res.text(); console.log(res);})
-        .then(res => this.setState({ dbResponse: res }))
-        .catch(err => err);
-  };
+  // callDB() {
+  //   fetch(ENDPOINT + "/testDB")
+  //       .then(res => {res.text(); console.log(res);})
+  //       .then(res => this.setState({ dbResponse: res }))
+  //       .catch(err => err);
+  // };
 
-  componentWillMount() {
-      this.callAPI();
-      // this.callDB();
-  };
+  // componentWillMount() {
+  //     this.callAPI();
+  //     // this.callDB();
+  // };
 
   render(){
     return (

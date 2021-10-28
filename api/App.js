@@ -10,8 +10,7 @@ var cors = require("cors");
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var testAPIRouter = require("./routes/testAPI");
-var testDBRouter = require("./routes/testDB");//Mongodb  
+var testAPIRouter = require("./routes/API");
 
 var app = express();
 
@@ -38,8 +37,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use("/testAPI", testAPIRouter);
-app.use("/testDB", testDBRouter);
+app.use("/API", testAPIRouter);
 
 // This middleware informs the express application to serve our compiled React files
 if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging') {

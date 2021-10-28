@@ -27,15 +27,24 @@ main()
     // .finally(() => client.close());
 
 async function insert(hashedPDF) {
-    const pdfInDatabase = await collection.find({ hash: hashedPDF.hash }).toArray();
-    if(pdfInDatabase.length > 0){
-      return "Bad";
-    } else {
-      const insertResult = await collection.insertOne(hashedPDF)
-      console.log('Inserted documents =>', insertResult);
-      return "Good";
-    }
+  const pdfInDatabase = await collection.find({ hash: hashedPDF.hash }).toArray();
+  if(pdfInDatabase.length > 0){
+    return "Bad";
+  } else {
+    const insertResult = await collection.insertOne(hashedPDF)
+    console.log('Inserted PDF =>', insertResult);
+    return "Good";
+  }
+}
 
+async function find(hashedPDF) {
+  const pdfInDatabase = await collection.find({ hash: hashedPDF }).toArray();
+  if(pdfInDatabase.length > 0){
+    console.log('Found PDF =>', pdfInDatabase);
+    return pdfInDatabase[0];
+  } else {
+    return "Bad";
+  }
 }
 
 /* GET users listing. */
@@ -43,7 +52,7 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
-//upload route
+//Upload route
 router.post('/upload', async function(req,res, next) {
     var hashedPDF = new shajs.sha256().update(req.body.pdfFile).digest('hex');
     var hashInfo = {
@@ -57,6 +66,21 @@ router.post('/upload', async function(req,res, next) {
         errorMessage: "The PDF hash already exists in the database!"
       });
     }
+});
+
+//Verify route
+router.post('/verify', async function(req,res, next) {
+  var hashedPDF = new shajs.sha256().update(req.body.pdfFile).digest('hex');
+
+  const response = await find(hashedPDF);
+
+  if(response != "Bad"){
+    res.json(response);
+  } else {
+    res.status(404).send({
+      errorMessage: "The PDF hash does not exsist in the database!"
+    });
+  }
 });
 
 module.exports = router;

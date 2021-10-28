@@ -8,7 +8,7 @@ import './Upload.css'
 import axios from 'axios'
 import PopUp from '../popup/Popup'
 
-const ENDPOINT = "http://localhost:9000/testAPI";
+const ENDPOINT = "http://localhost:9000/API";
 var hashOfDoc = 'undefined';
 var uploadTime = 'undefined';
 
@@ -74,7 +74,6 @@ export const Upload = () => {
 			uploadTime = response.data.uploadTime
 			setPopup(true);
 			console.log(response);
-			console.log("PDF Hash from API:" + response.data.hash);
 		})
         .catch(error => {
 			alert(error.response.data.errorMessage);
@@ -95,7 +94,7 @@ export const Upload = () => {
 						<br/>
 						<b> Deployed contract address: </b>
 						<br/>
-						<b> Deployed time: {uploadTime} </b>
+						<b> Deployed date: {uploadTime} </b>
 					</div>
 		
 				</>}
