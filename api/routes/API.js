@@ -83,4 +83,29 @@ router.post('/verify', async function(req,res, next) {
   }
 });
 
+// Login
+router.post('/login', (req, res) => {
+  res.send({
+    token: 'test123'
+  });
+});
+
+// DYNAMIC ROUTE FOR VERIFICATION
+/*
+router.get('/verify', async function(req,res, next) {
+  var hashedPDF = new shajs.sha256().update(req.body.pdfFile).digest('hex');
+
+  const response = await find(hashedPDF);
+
+  if(response != "Bad"){
+    res.json(response);
+  } else {
+    res.status(404).send({
+      errorMessage: "The PDF hash does not exsist in the database!"
+    });
+  }
+});
+*/
+
+
 module.exports = router;
